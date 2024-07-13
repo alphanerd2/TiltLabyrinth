@@ -1,0 +1,11 @@
+# ninja log v5
+51	854	7423149007645647	FramePacing/CMakeFiles/swappywrapper.dir/UnitySwappyWrapper.cpp.o	87625f0acfd74cff
+856	1580	7423149012439424	D:/UnityProjects/TiltLabyrinth-main/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/4o6h23n5/obj/arm64-v8a/libswappywrapper.so	78ebfc3e101dc377
+32	2025	7423149019520266	GameActivity/CMakeFiles/game.dir/UGAInputKeyEvent.cpp.o	61eb6631d6c4f390
+13	2058	7423149019759635	GameActivity/CMakeFiles/game.dir/UGAEntry.cpp.o	9df9bd6897e076b1
+26	2090	7423149020577101	GameActivity/CMakeFiles/game.dir/UGAInputMotionEvent.cpp.o	c13fbc2a09d36949
+39	2220	7423149021885561	GameActivity/CMakeFiles/game.dir/UGASoftKeyboard.cpp.o	9db61e788d3898ab
+8	2286	7423149022595286	GameActivity/CMakeFiles/game.dir/UGADebug.cpp.o	ba7125f84e6be842
+19	2523	7423149024970774	GameActivity/CMakeFiles/game.dir/UGAInput.cpp.o	5e11341f7146ad13
+1	2621	7423149025928357	GameActivity/CMakeFiles/game.dir/UGAApplication.cpp.o	358cf2d4377f55d3
+2621	2895	7423149027853432	D:/UnityProjects/TiltLabyrinth-main/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/4o6h23n5/obj/arm64-v8a/libgame.so	91954a3e458eccd9
