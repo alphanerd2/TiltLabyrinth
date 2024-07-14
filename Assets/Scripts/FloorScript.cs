@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class FloorScript : MonoBehaviour
@@ -13,6 +14,14 @@ public class FloorScript : MonoBehaviour
     public Vector3 turnVector;
     public Vector3 inputVector;
     public int sensitivity = 1;
+    
+    public void ChangeSensitivity(int amount)
+    {
+        sensitivity += amount;
+        sensitivity = Mathf.Clamp(sensitivity, 1, 10);
+    }
+    
+    
     private void Awake()
     {
         _fadeGameObject = GameObject.FindGameObjectWithTag("Fade");
@@ -105,6 +114,8 @@ public class FloorScript : MonoBehaviour
         return inputVector;
     }
 
+    
+    
     // Method to switch to Attitude gyroscope method
     public void SwitchGyroMethodAttitude()
     {
@@ -127,15 +138,5 @@ public class FloorScript : MonoBehaviour
     public void SwitchGyroMethodUserAcceleration()
     {
         currentGyroMethod = GyroMethod.UserAcceleration;
-    }
-
-    public void IncreaseSensitivity()
-    {
-        sensitivity += 1;
-    }
-    
-    public void DecreaseSensitivity()
-    {
-        sensitivity -= 1;
     }
 }
