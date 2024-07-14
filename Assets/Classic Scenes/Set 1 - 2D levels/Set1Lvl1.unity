@@ -4411,8 +4411,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 145002214}
-        m_TargetAssemblyTypeName: FloorScript, Assembly-CSharp
+      - m_Target: {fileID: 764260583546747450}
+        m_TargetAssemblyTypeName: MobileDebugVector, Assembly-CSharp
         m_MethodName: SwitchGyroMethodRotationRateUnbiased
         m_Mode: 1
         m_Arguments:
@@ -4467,8 +4467,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 145002214}
-        m_TargetAssemblyTypeName: FloorScript, Assembly-CSharp
+      - m_Target: {fileID: 764260583546747450}
+        m_TargetAssemblyTypeName: MobileDebugVector, Assembly-CSharp
         m_MethodName: SwitchGyroMethodAttitude
         m_Mode: 1
         m_Arguments:
@@ -5237,8 +5237,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 145002214}
-        m_TargetAssemblyTypeName: FloorScript, Assembly-CSharp
+      - m_Target: {fileID: 764260583546747450}
+        m_TargetAssemblyTypeName: MobileDebugVector, Assembly-CSharp
         m_MethodName: SwitchGyroMethodUserAcceleration
         m_Mode: 1
         m_Arguments:
@@ -5531,8 +5531,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 145002214}
-        m_TargetAssemblyTypeName: FloorScript, Assembly-CSharp
+      - m_Target: {fileID: 764260583546747450}
+        m_TargetAssemblyTypeName: MobileDebugVector, Assembly-CSharp
         m_MethodName: SwitchGyroMethodRotationRate
         m_Mode: 1
         m_Arguments:
@@ -5764,7 +5764,7 @@ GameObject:
   - component: {fileID: 7304193202986247327}
   - component: {fileID: 5452638915918636452}
   m_Layer: 5
-  m_Name: GameObject
+  m_Name: Gyro Method Switch
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5852,7 +5852,7 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 0}
+  m_TargetGraphic: {fileID: 334867314327891965}
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
@@ -5909,7 +5909,7 @@ MonoBehaviour:
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_PressedColor: {r: 1, g: 0, b: 0, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
@@ -5926,7 +5926,7 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 0}
+  m_TargetGraphic: {fileID: 7911897889692861117}
   m_OnClick:
     m_PersistentCalls:
       m_Calls:

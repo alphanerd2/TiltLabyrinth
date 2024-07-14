@@ -39,7 +39,8 @@ public class FloorScript : MonoBehaviour
     {
         SetFloorRotation();
 
-        inputVector = GetGyroInput();
+       // inputVector = GetGyroInput();
+        inputVector = GetAccelerometerInput();
 
         // _ballRigidbody.AddForce(new Vector3(
         //     Mathf.Clamp(inputVector.x, -1, 1), 0, Mathf.Clamp(inputVector.z, -1, 1)) / 15, ForceMode.Impulse);
@@ -47,8 +48,9 @@ public class FloorScript : MonoBehaviour
         
         if (AxisLock != 4)
         {
-            turnVector = new Vector3(
-                Mathf.Clamp(inputVector.z, -sensitivity, sensitivity), 0, Mathf.Clamp(inputVector.x, -sensitivity, sensitivity));
+            // turnVector = new Vector3(
+            //     Mathf.Clamp(inputVector.z, -sensitivity, sensitivity), 0, Mathf.Clamp(inputVector.x, -sensitivity, sensitivity));
+            turnVector = new Vector3(inputVector.y, 0, inputVector.x);
             transform.Rotate(turnVector);
         }
 
@@ -57,11 +59,6 @@ public class FloorScript : MonoBehaviour
             _fadeGameObject.GetComponent<FunctionsScript>().SceneToLoad = "MainMenu";
             _fadeGameObject.GetComponent<Animator>().Play("FadeOnAnim");
         }
-    }
-
-    private static Quaternion GyroToUnity(Quaternion q)
-    {
-        return new Quaternion(q.x, q.y, -q.z, -q.w);
     }
     
     private void SetFloorRotation()
@@ -113,30 +110,15 @@ public class FloorScript : MonoBehaviour
 
         return inputVector;
     }
-
     
-    
-    // Method to switch to Attitude gyroscope method
-    public void SwitchGyroMethodAttitude()
+    private Vector3 GetAccelerometerInput()
     {
-        currentGyroMethod = GyroMethod.Attitude;
-    }
+        Vector3 accelerometerInput = Vector3.zero;
 
-    // Method to switch to RotationRate gyroscope method
-    public void SwitchGyroMethodRotationRate()
-    {
-        currentGyroMethod = GyroMethod.RotationRate;
-    }
+        Vector3 acceleration = Input.acceleration;
+        accelerometerInput.x = AxisLock != 1 ? acceleration.y : 0;
+        accelerometerInput.z = AxisLock != 2 ? acceleration.x : 0;
 
-    // Method to switch to RotationRateUnbiased gyroscope method
-    public void SwitchGyroMethodRotationRateUnbiased()
-    {
-        currentGyroMethod = GyroMethod.RotationRateUnbiased;
-    }
-
-    // Method to switch to UserAcceleration gyroscope method
-    public void SwitchGyroMethodUserAcceleration()
-    {
-        currentGyroMethod = GyroMethod.UserAcceleration;
+        return accelerometerInput;
     }
 }
