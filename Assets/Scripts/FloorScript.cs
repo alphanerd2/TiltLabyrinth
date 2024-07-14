@@ -13,7 +13,7 @@ public class FloorScript : MonoBehaviour
     private bool gyroEnabled;
     public Vector3 turnVector;
     public Vector3 inputVector;
-    public int sensitivity = 1;
+    [Range(2,10)][SerializeField] public int sensitivity;
     
     public void ChangeSensitivity(int amount)
     {
@@ -42,15 +42,16 @@ public class FloorScript : MonoBehaviour
        // inputVector = GetGyroInput();
         inputVector = GetAccelerometerInput();
 
-        // _ballRigidbody.AddForce(new Vector3(
-        //     Mathf.Clamp(inputVector.x, -1, 1), 0, Mathf.Clamp(inputVector.z, -1, 1)) / 15, ForceMode.Impulse);
-
+        _ballRigidbody.AddForce(new Vector3(
+            Mathf.Clamp(inputVector.x, -sensitivity, sensitivity),
+            0, Mathf.Clamp(inputVector.z, -sensitivity, sensitivity)) / 15, ForceMode.Impulse);
         
         if (AxisLock != 4)
         {
-            // turnVector = new Vector3(
-            //     Mathf.Clamp(inputVector.z, -sensitivity, sensitivity), 0, Mathf.Clamp(inputVector.x, -sensitivity, sensitivity));
-            turnVector = new Vector3(inputVector.y, 0, inputVector.x);
+            turnVector = new Vector3(
+                Mathf.Clamp(inputVector.z, -sensitivity, sensitivity), 0, Mathf.Clamp(inputVector.x, -sensitivity, sensitivity));
+            // turnVector = new Vector3(inputVector.y, 0, inputVector.x);
+            
             transform.Rotate(turnVector);
         }
 
