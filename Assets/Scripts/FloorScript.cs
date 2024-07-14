@@ -10,7 +10,9 @@ public class FloorScript : MonoBehaviour
 
     public GyroMethod currentGyroMethod = GyroMethod.RotationRateUnbiased; // Default method
     private bool gyroEnabled;
-
+    public Vector3 turnVector;
+    public Vector3 inputVector;
+    public int sensitivity = 1;
     private void Awake()
     {
         _fadeGameObject = GameObject.FindGameObjectWithTag("Fade");
@@ -28,22 +30,17 @@ public class FloorScript : MonoBehaviour
     {
         SetFloorRotation();
 
-        Vector3 inputVector = GetGyroInput();
+        inputVector = GetGyroInput();
 
         // _ballRigidbody.AddForce(new Vector3(
         //     Mathf.Clamp(inputVector.x, -1, 1), 0, Mathf.Clamp(inputVector.z, -1, 1)) / 15, ForceMode.Impulse);
 
+        
         if (AxisLock != 4)
         {
-            if (currentGyroMethod == GyroMethod.Attitude)
-            {
-                transform.rotation = GyroToUnity(Input.gyro.attitude);
-            }
-            else
-            {
-                transform.Rotate(new Vector3(
-                    Mathf.Clamp(inputVector.z, -1, 1), 0, Mathf.Clamp(inputVector.x, -1, 1))); 
-            }
+            turnVector = new Vector3(
+                Mathf.Clamp(inputVector.z, -sensitivity, sensitivity), 0, Mathf.Clamp(inputVector.x, -sensitivity, sensitivity));
+            transform.Rotate(turnVector);
         }
 
         if (Input.GetKey(KeyCode.Escape))
@@ -130,5 +127,15 @@ public class FloorScript : MonoBehaviour
     public void SwitchGyroMethodUserAcceleration()
     {
         currentGyroMethod = GyroMethod.UserAcceleration;
+    }
+
+    public void IncreaseSensitivity()
+    {
+        sensitivity += 1;
+    }
+    
+    public void DecreaseSensitivity()
+    {
+        sensitivity -= 1;
     }
 }
