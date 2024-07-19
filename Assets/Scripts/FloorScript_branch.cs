@@ -1,4 +1,4 @@
-using UnityEngine;
+/* using UnityEngine;
 
 public class FloorScript : MonoBehaviour
 {
@@ -131,4 +131,4 @@ public class FloorScript : MonoBehaviour
     {
         currentGyroMethod = GyroMethod.UserAcceleration;
     }
-}
+} */
