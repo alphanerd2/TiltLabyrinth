@@ -50,22 +50,14 @@ public class FloorScript : MonoBehaviour
         // Add a force to the ball to make it a bit more responsive
         Vector3 force = new Vector3(0, 0, 0);
         if(AxisLock != 1)
-<<<<<<< Updated upstream
-            force.x = Mathf.Clamp(/*Input.GetAxisRaw("Mouse Y") + */Input.GetAxis("Horizontal"), -1, 1);
-=======
             force.x = Mathf.Clamp(/*Input.GetAxisRaw("Mouse Y") + */Input.gyro.rotationRateUnbiased.x, -1, 1);
->>>>>>> Stashed changes
         else
             force.x = Mathf.Clamp(/*Input.GetAxisRaw("Mouse Y") + */ 0, -1, 1);
 
         force.y = 0;
 
         if(AxisLock != 2)
-<<<<<<< Updated upstream
-            force.z = -Mathf.Clamp(/*Input.GetAxisRaw("Mouse X") + */-Input.GetAxis("Vertical"), -1, 1);
-=======
             force.z = -Mathf.Clamp(/*Input.GetAxisRaw("Mouse X") + */ /*-Input.GetAxis("Vertical")*/ Input.gyro.rotationRateUnbiased.y, -1, 1);
->>>>>>> Stashed changes
         else
             force.z = -Mathf.Clamp(/*Input.GetAxisRaw("Mouse X") + */0, -1, 1);
 
@@ -76,21 +68,13 @@ public class FloorScript : MonoBehaviour
         {
             Vector3 addedRotation = new Vector3(0, 0, 0);
             if (AxisLock != 2)
-<<<<<<< Updated upstream
-                addedRotation.x = Mathf.Clamp(/*Input.GetAxisRaw("Mouse Y") + */Input.GetAxis("Vertical"), -1, 1);
-=======
                 addedRotation.x = Mathf.Clamp(/*Input.GetAxisRaw("Mouse Y") + */Input.gyro.rotationRateUnbiased.y, -1, 1);
->>>>>>> Stashed changes
             else
                 addedRotation.x = Mathf.Clamp(/*Input.GetAxisRaw("Mouse Y") + */0, -1, 1);
 
             addedRotation.y = 0;
             if (AxisLock != 1)
-<<<<<<< Updated upstream
-                addedRotation.z = -Mathf.Clamp(/*Input.GetAxisRaw("Mouse X") + */Input.GetAxis("Horizontal"), -1, 1);
-=======
                 addedRotation.z = -Mathf.Clamp(/*Input.GetAxisRaw("Mouse X") + */Input.gyro.rotationRateUnbiased.x, -1, 1);
->>>>>>> Stashed changes
             else
                 addedRotation.z = -Mathf.Clamp(/*Input.GetAxisRaw("Mouse X") + */0, -1, 1);
 
